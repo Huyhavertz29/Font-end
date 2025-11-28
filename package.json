@@ -53,5 +53,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://back-end-commerce.onrender.com"
+  "proxy": "http://localhost:3001"
 }

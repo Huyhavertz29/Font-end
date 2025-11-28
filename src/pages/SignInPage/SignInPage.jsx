@@ -9,7 +9,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import * as UserService from '../../services/UserService'
 import { useMutationHooks } from '../../hooks/useMutationHook'
 import Loading from '../../components/LoadingComonent/Loading'
-import { jwtDecode } from "jwt-decode";
+import  jwt_decode  from "jwt-decode";
 import { useDispatch } from 'react-redux'
 import { updateUser } from '../../redux/slides/userSlide'
 
@@ -37,8 +37,7 @@ const SignInPage = () => {
       localStorage.setItem('access_token', JSON.stringify(data?.access_token))
       localStorage.setItem('refresh_token', JSON.stringify(data?.refresh_token))
       if(data?.access_token){
-        const decoded = jwtDecode(data?.access_token)
-        console.log('decode', decoded)
+        const decoded = jwt_decode(data?.access_token)
         if(decoded?.id){
           handleGetDetailsUser(decoded?.id,data?.access_token)
         }
