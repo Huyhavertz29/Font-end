@@ -15,7 +15,7 @@
     "antd-table-saveas-excel": "^2.2.1",
     "axios": "^1.13.2",
     "dotenv": "^17.2.3",
-    "jwt-decode": "^4.0.0",
+    "jwt-decode": "^3.1.2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-export-table-to-excel": "^1.0.6",
@@ -30,8 +30,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
