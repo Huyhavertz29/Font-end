@@ -37,7 +37,7 @@ function App() {
   UserService.axiosJWT.interceptors.request.use(async (config) => {
     const currentTime = new Date()
     const { decoded } = handleDecoded()
-    let storageRefreshToken = localStorage.getItem('refresh_tokeb')
+    let storageRefreshToken = localStorage.getItem('refresh_token')
     const refreshToken = JSON.parse(storageRefreshToken)
     const decodedRefreshToken = jwt_decode(refreshToken)
     if (decoded?.exp < currentTime.getTime() / 1000) {
