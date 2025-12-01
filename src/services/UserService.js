@@ -61,6 +61,8 @@ export const logoutUser = async () => {
     return res.data
 }
 
+
+
 export const updateUser = async (id, data, access_token) => {
     const res = await axiosJWT.put(`${process.env.REACT_APP_API_KEY}/user/update-user/${id}`, data, {
         headers: {
@@ -79,3 +81,14 @@ export const deleteManyUser = async (data, access_token) => {
 
 }
 
+export const forgotPassword = async (email) => {
+    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/user/forgot-password`, { email })
+    return res.data
+}
+
+export const resetPassword = async (token, newPassword) => {
+    const res = await axios.post(`${process.env.REACT_APP_API_KEY}/user/reset-password/${token}`, {
+        password: newPassword
+    })
+    return res.data
+}
